@@ -51,7 +51,7 @@ function mostrarListaAmigos() {
 
 // Función para realizar el sorteo del amigo secreto
 function sortearAmigo() {
-    // Verificar que haya al menos 2 amigos en la lista
+    // Verificar que haya al menos 3 amigos en la lista
     if (amigos.length <= 2) {
         alert('No hay amigos suficientes en la lista.\nAgrega al menos 3 amigos para poder hacer el sorteo.');
         return; // Salir de la función si no hay amigos
@@ -100,10 +100,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Exportar la función para que pueda ser utilizada en otros archivos (por ejemplo, para pruebas)
-// module.exports = amigoSecreto;
-// Nota: La asignación es aleatoria, por lo que cada vez que ejecutes la función, podrías obtener una asignación diferente.
+// Función para reiniciar el juego del AmigoSecreto
+function reiniciarJuego() {
+    // Limpiar el array de amigos
+    amigos = [];
 
-// Asegúrate de probar tu función con diferentes listas de amigos para verificar que siempre cumple con las reglas establecidas.
+    // Limpiar la lista de nombres que se muestra en el HTML
+    mostrarListaAmigos(); 
+    
+    // Limpiar el resultado del sorteo, llamando a la función existente
+    limpiarResultado();
+
+    // Se ubica el cursor en el campo de entrada de texto para empezar  un nuevo juego.
+    document.getElementById('amigo').focus();
+}
+
 
 
